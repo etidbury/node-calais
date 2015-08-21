@@ -22,10 +22,13 @@ describe('Calais fetch', function() {
       content: 'Microsoft Apple Google San-Francisco New York Cluj-Napoca'
     });
 
-    calais.fetch(function(err) {
+    calais.fetch(function(err, data) {
       if(err) {
         return done(err);
       }
+
+      should.exist(data.doc);
+
       done();
     });
   });
